@@ -1,8 +1,6 @@
-# 🐻 BearBones
+# 🐻 BearBones front-end toolkit
 
 A bare bones front-end project starter with minimal CSS and JS.
-
-# 🐻 BearBones front-end toolkit
 
 ## Sections
 
