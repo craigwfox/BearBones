@@ -96,6 +96,9 @@ The goal is to include only a few commonly used bits of JS in the form of web co
 
 In the end I would like to have a way to pick and choose which components are needed and then build those out into a single js file.
 
+- Settings menu
+  - Theme swapper (light/dark/contrast)
+  - Font size
 - Tabbed content
 - Modals
 - Slider
