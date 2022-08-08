@@ -20,9 +20,7 @@ A bare bones front-end project starter with minimal CSS and JS.
 
 ## CSS
 
-styles.scss
-
-Inspired by the CUBE methodology of Utopia
+The CSS will be based on the [CUBE CSS methodology](https://cube.fyi/).
 
 ### Global
 
