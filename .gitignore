@@ -68,10 +68,11 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# My additions
+# Local Netlify folder
+.netlify
+
+# Misc
 dist
 src/css
 src/js-out
-
-# Local Netlify folder
-.netlify
+pnpm-lock.yaml
