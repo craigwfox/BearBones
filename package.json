@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/craigwfox/BearBones#readme",
   "scripts": {
-    "dev": "gulp",
+    "dev": "gulp watch",
     "build": "gulp build"
   },
   "dependencies": {

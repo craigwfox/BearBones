@@ -90,6 +90,9 @@ var startServer = function (done) {
   // Make sure this feature is activated before running
   // Initialize BrowserSync
   browserSync.init({
+    server: {
+      baseDir: "./",
+    },
     open: false,
     notify: false,
   })
