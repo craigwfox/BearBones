@@ -1,9 +1,10 @@
 // ---------------------------------------------
 // ======---------------------------------======
-//  Base structuring
+//  Wrappers
 // ======---------------------------------======
 // ---------------------------------------------
 
-.flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
+.wrapper {
+  padding-block: var(--wrapper-block, var(--space-m));
+  padding-inline: var(--wrapper-fluid);
 }

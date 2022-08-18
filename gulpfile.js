@@ -23,11 +23,15 @@ const paths = {
     output: "dist/js",
   },
   imgs: {
-    input: "src/images/**/*",
+    input: "src/imgs/**/*",
     output: "dist/imgs",
   },
   html: {
     input: "src/html/**/*",
+    output: "dist/",
+  },
+  pass: {
+    input: "src/pass-through/**/*",
     output: "dist/",
   },
   reload: "./dist/",
@@ -82,6 +86,13 @@ function moveHtml() {
 }
 
 // ====---------------====
+// Pass through to root
+// ====---------------====
+function movePass() {
+  return src(paths.pass.input).pipe(dest(paths.pass.output))
+}
+
+// ====---------------====
 // BrowserSync
 // ====---------------====
 
@@ -113,6 +124,7 @@ function watchSource() {
   watch(paths.js.input, series(buildJs, reloadBrowser))
   watch(paths.imgs.input, series(buildImgs, reloadBrowser))
   watch(paths.html.input, series(moveHtml, reloadBrowser))
+  watch(paths.pass.input, series(movePass, reloadBrowser))
 }
 
 // ====---------------====
@@ -122,8 +134,9 @@ exports.buildStyles = buildStyles
 exports.buildJs = buildJs
 exports.buildImgs = buildImgs
 exports.moveHtml = moveHtml
+exports.movePass = movePass
 
-const allTasks = [buildStyles, buildJs, buildImgs, moveHtml]
+const allTasks = [buildStyles, buildJs, buildImgs, moveHtml, movePass]
 
 exports.build = series(...allTasks)
 exports.watch = series(startServer, watchSource)
