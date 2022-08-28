@@ -83,4 +83,13 @@
   --space-xl: clamp(3.94rem, 3.66rem + 1.18vw, 4.5rem);
   --space-2xl: clamp(5.25rem, 4.88rem + 1.57vw, 6rem);
   --space-3xl: clamp(7.88rem, 7.32rem + 2.35vw, 9rem);
+
+  // ====---------------====
+  // Widths / Wrappers
+  // ====---------------====
+  --wrapper-width: 75rem;
+  --wrapper-fluid: max(
+    var(--space-l),
+    100% - (var(--wrapper-width) - ((var(--space-l) * 2) / 2))
+  );
 }

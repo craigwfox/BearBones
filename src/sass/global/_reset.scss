@@ -1,11 +1,9 @@
 // ---------------------------------------------
 // ======---------------------------------======
 //  Reset
+// Based on: https://www.joshwcomeau.com/css/custom-css-reset/
 // ======---------------------------------======
 // ---------------------------------------------
-
-// Mostly from
-// https://www.joshwcomeau.com/css/custom-css-reset/
 
 // ====---------------====
 // 1. Use a more-intuitive box-sizing model.
@@ -41,6 +39,7 @@ body {
 
   color: hsl(var(--clr-text-base));
   font: var(--step-0) / 1.5 var(--ff-main);
+
   -webkit-font-smoothing: antialiased;
 }
 

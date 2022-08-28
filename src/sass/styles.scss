@@ -8,6 +8,7 @@
 // Global
 // ====---------------====
 @use "./global/variables";
+@use "./global/functions";
 @use "./global/mixins";
 @use "./global/reset";
 
@@ -22,6 +23,7 @@
 // ====---------------====
 @use "./utilities/text";
 @use "./utilities/wrappers";
+@use "./utilities/buttons";
 
 // ====---------------====
 // Blocks & Exceptions
