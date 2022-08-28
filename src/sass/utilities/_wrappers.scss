@@ -1,15 +1,11 @@
 // ---------------------------------------------
 // ======---------------------------------======
-//  Base structuring
+//  Wrappers
 // ======---------------------------------======
 // ---------------------------------------------
+.wrapper {
+  max-width: 71.25rem;
 
-.flow {
-  > * + * {
-    margin-block-start: var(--space-s);
-  }
-
-  :where(h1, h2, h3, h4, h5, h6) + p {
-    margin-block-start: var(--space-3xs);
-  }
+  margin-inline: auto;
+  padding: var(--space-s);
 }

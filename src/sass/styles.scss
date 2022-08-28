@@ -7,7 +7,6 @@
 // ====---------------====
 // Global
 // ====---------------====
-@use "./global/fontface";
 @use "./global/variables";
 @use "./global/mixins";
 @use "./global/reset";
@@ -21,7 +20,11 @@
 // ====---------------====
 // Utilities
 // ====---------------====
+@use "./utilities/text";
+@use "./utilities/wrappers";
 
 // ====---------------====
 // Blocks & Exceptions
 // ====---------------====
+@use "./blocks/page-header";
+@use "./blocks/page-footer";
