@@ -1,3 +1,5 @@
+@use "../global/mixins" as *;
+
 // ---------------------------------------------
 // ======---------------------------------======
 //  Type
@@ -55,5 +57,46 @@ a {
   &:hover,
   &:focus {
     color: hsl(var(--clr-link-hover));
+  }
+}
+
+.skip-content {
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+  position: absolute;
+
+  margin: -1px;
+  padding: 1rem 2rem;
+
+  background-color: hsl(var(--clr-background));
+  border: 0.3rem solid hsl(var(--clr-link));
+  clip: rect(0 0 0 0);
+
+  color: hsl(var(--clr-text));
+  white-space: nowrap;
+  text-decoration: none;
+
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  &:focus {
+    width: auto;
+    height: auto;
+
+    overflow: visible;
+    position: absolute;
+    z-index: 1;
+    left: 2rem;
+    top: 2rem;
+
+    margin: 0;
+
+    clip: auto;
+  }
+
+  &:focus:hover {
+    background: hsl(var(--clr-background));
+    border-color: hsl(var(--clr-link-hover));
   }
 }

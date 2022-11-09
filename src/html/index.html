@@ -21,14 +21,56 @@
 </head>
 
 <body>
+  <a class="skip-content" href="#main-content">Skip to content.</a>
   <header id="page-header" class="wrapper">
     <a href="/">
       🐻 BearBones toolkit
     </a>
-    <nav>
-      <ul class="list-basic">
-        <li><a href="/#type" aria-current="page">Type</a></li>
-        <li><a href="/js.html">JS components</a></li>
+    <nav aria-label="Site" id="page-nav" class="burger-wrapper" data-menu-status="closed">
+      <button class="burger-btn" type="button" aria-expanded="false" aria-controls="page-nav-list">
+        <span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="visually-hidden">Toggle menu</span>
+      </button>
+      <ul id="page-nav-list" class="burger-menu">
+        <li data-toggle="nav">
+          <a href="/index.html#type" aria-current="page" aria-expanded="false" aria-controls="dropdown-1">
+            Type
+          </a>
+          <ul id="dropdown-1" class="dropdown">
+            <li><a href="https://craigwfox.com">Lorem ipsum</a></li>
+            <li><a href="#0">Quam sit</a></li>
+            <li><a href="#last-drop">Provident minus ipsam</a></li>
+          </ul>
+        </li>
+        <li data-toggle="nav">
+          <a href="/js.html" aria-expanded="false" aria-controls="mega-menu-1">
+            JS components
+          </a>
+          <div id="mega-menu-1" class="mega">
+            <ul>
+              <li><a href="#0">Nav item 1</a></li>
+              <li><a href="#0">Nav item 2</a></li>
+              <li><a href="#0">Nav item 3</a></li>
+              <li><a href="#0">Nav item 4</a></li>
+            </ul>
+            <ul>
+              <li><a href="#0">Nav item 1</a></li>
+              <li><a href="#0">Nav item 2</a></li>
+              <li><a href="#0">Nav item 3</a></li>
+              <li><a href="#0">Nav item 4</a></li>
+            </ul>
+            <ul>
+              <li><a href="#0">Nav item 1</a></li>
+              <li><a href="#0">Nav item 2</a></li>
+              <li><a href="#0">Nav item 3</a></li>
+              <li><a href="#last-mega">Nav item 4</a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -54,6 +96,13 @@
         <li>Voluptatum voluptates obcaecati dolore delectus.</li>
         <li>Ut nisi voluptatibus eligendi delectus.</li>
       </ol>
+
+      <details>
+        <summary>Details summary list</summary>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse possimus quam odio ipsam magni animi, cum iste voluptates perferendis error. Animi debitis tenetur fugiat laboriosam quas perferendis maxime consequuntur eveniet!
+        </div>
+      </details>
     </div>
   </main>
 

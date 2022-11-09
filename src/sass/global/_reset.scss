@@ -35,9 +35,9 @@ body {
 //  5. Improve text rendering
 // ====---------------====
 body {
-  background: hsl(var(--clr-bg));
+  background: hsl(var(--clr-background));
 
-  color: hsl(var(--clr-text-base));
+  color: hsl(var(--clr-text));
   font: var(--step-0) / 1.5 var(--ff-main);
 
   -webkit-font-smoothing: antialiased;

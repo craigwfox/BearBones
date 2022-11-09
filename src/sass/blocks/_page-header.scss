@@ -1,13 +1,20 @@
+@use "../global/mixins" as *;
+
 // ---------------------------------------------
 // ======---------------------------------======
-//  Header
+//  Page Header
 // ======---------------------------------======
 // ---------------------------------------------
 
+// ====---------------====
+// Base
+// ====---------------====
 #page-header {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, auto);
   gap: var(--step--1) var(--step-0);
+  align-items: center;
+  justify-content: space-between;
 
   border-block-end: 0.5rem solid hsl(var(--clr-secondary));
 

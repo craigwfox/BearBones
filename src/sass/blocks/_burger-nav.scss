@@ -1,0 +1,156 @@
+@use "../global/mixins" as *;
+
+// ---------------------------------------------
+// ======---------------------------------======
+//  Burger nav
+// ======---------------------------------======
+// ---------------------------------------------
+
+// ====---------------====
+// Burger nav
+// ====---------------====
+.burger-menu {
+  padding-inline-start: 0;
+
+  list-style: none;
+
+  // Mobile menu
+  @include tablet-max {
+    display: none;
+  }
+
+  // Tablet+ menu
+  @include tablet-min {
+    display: flex;
+    gap: var(--space-s);
+
+    > li {
+      position: relative;
+    }
+
+    // ===------ Dropdown ------===
+    .dropdown {
+      display: none;
+
+      position: absolute;
+      top: 100%;
+    }
+
+    a[aria-expanded="true"] + .dropdown {
+      display: block;
+    }
+
+    // ===------ Mega ------===
+    .mega {
+      display: none;
+
+      position: absolute;
+      top: 100%;
+    }
+
+    a[aria-expanded="true"] + .mega {
+      display: block;
+    }
+  }
+}
+
+body:has([data-menu-status="open"]) {
+  @include tablet-max {
+    overflow: hidden;
+  }
+}
+
+[data-menu-status="open"] {
+  .burger-menu {
+    @include tablet-max {
+      display: block;
+
+      overflow-y: auto;
+
+      padding: var(--space-s) var(--space-l);
+
+      position: fixed;
+      inset: var(--header-height, 10rem) 0 0;
+
+      background-color: hsl(var(--clr-background) / 0.9);
+    }
+  }
+}
+
+// ====---------------====
+// Burger button styles
+// ====---------------====
+.burger-btn {
+  width: 3rem;
+
+  display: block;
+
+  padding: 0;
+
+  border: 0;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  color: hsl(var(--clr-link));
+
+  @include tablet-min {
+    display: none;
+  }
+
+  > span {
+    --height: 0.4em;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, var(--height));
+    gap: var(--height);
+
+    > span {
+      width: 100%;
+      height: var(--height);
+
+      grid-column: 1;
+
+      border-radius: var(--height);
+      background: currentColor;
+
+      &:nth-child(1) {
+        grid-row: 1;
+      }
+
+      &:nth-child(2) {
+        grid-row: 2;
+      }
+
+      &:nth-child(3) {
+        grid-row: 3;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: hsl(var(--clr-link-hover));
+  }
+}
+
+[data-menu-status="open"] {
+  .burger-btn {
+    > span {
+      span:nth-child(1) {
+        grid-row: 2;
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        grid-row: 2;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
