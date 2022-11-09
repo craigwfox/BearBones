@@ -8,3 +8,11 @@
   padding-block: var(--wrapper-block, var(--space-m));
   padding-inline: var(--wrapper-fluid);
 }
+
+.wrapper-block {
+  padding-block: var(--wrapper-block, var(--space-m));
+}
+
+.wrapper-inline {
+  padding-inline: var(--wrapper-fluid);
+}

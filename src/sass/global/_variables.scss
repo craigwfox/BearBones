@@ -1,3 +1,5 @@
+@use "./mixins" as *;
+
 // ---------------------------------------------
 // ======---------------------------------======
 //  Variables
@@ -17,29 +19,36 @@
   --clr-secondary-h: 173;
   --clr-secondary-s: 35%;
   --clr-secondary-l: 30%;
-  --clr-secondary: var(--clr-secondary-h), var(--clr-secondary-s),
+  --clr-secondary: var(--clr-secondary-h) var(--clr-secondary-s)
     var(--clr-secondary-l);
 
   --clr-tertiary-h: 0;
   --clr-tertiary-s: 17%;
   --clr-tertiary-l: 35%;
-  --clr-tertiary: var(--clr-tertiary-h), var(--clr-tertiary-s),
+  --clr-tertiary: var(--clr-tertiary-h) var(--clr-tertiary-s)
     var(--clr-tertiary-l);
 
-  --clr-bg-h: 32;
-  --clr-bg-s: 17%;
-  --clr-bg-l: 90%;
-  --clr-bg: var(--clr-bg-h), var(--clr-bg-s), var(--clr-bg-l);
+  --clr-background-h: 32;
+  --clr-background-s: 17%;
+  --clr-background-l: 90%;
+  --clr-background: var(--clr-background-h) var(--clr-background-s)
+    var(--clr-background-l);
+
+  --clr-background-alt-h: 32;
+  --clr-background-alt-s: 17%;
+  --clr-background-alt-l: 80%;
+  --clr-background-alt: var(--clr-background-alt-h) var(--clr-background-alt-s)
+    var(--clr-background-alt-l);
 
   --clr-text-h: 0;
   --clr-text-s: 17%;
   --clr-text-l: 20%;
-  --clr-text: var(--clr-text-h), var(--clr-text-s), var(--clr-text-l);
+  --clr-text: var(--clr-text-h) var(--clr-text-s) var(--clr-text-l);
 
   --clr-link-h: 243;
   --clr-link-s: 61%;
   --clr-link-l: 45%;
-  --clr-link: var(--clr-link-h), var(--clr-link-s), var(--clr-link-l);
+  --clr-link: var(--clr-link-h) var(--clr-link-s) var(--clr-link-l);
 
   --clr-link-hover: var(--clr-secondary);
 
@@ -87,9 +96,35 @@
   // ====---------------====
   // Widths / Wrappers
   // ====---------------====
-  --wrapper-width: 75rem;
+  --page-max-width: 90rem;
   --wrapper-fluid: max(
     var(--space-l),
-    100% - (var(--wrapper-width) - ((var(--space-l) * 2) / 2))
+    100% - (var(--page-max-width) - ((var(--space-l) * 2) / 2))
   );
+
+  // ===------ Min width vars ------===
+  --mobile-lg-min: #{$mobile-lg-min};
+  --tablet-min: #{$tablet-min};
+  --desktop-min: #{$desktop-min};
+  --desktop-lg-min: #{$desktop-lg-min};
+  --desktop-xl-min: #{$desktop-xl-min};
+
+  // ===------ Max width vars ------===
+  --mobile-sm-max: #{$mobile-sm-max};
+  --mobile-lg-max: #{$mobile-lg-max};
+  --tablet-max: #{$tablet-max};
+  --desktop-max: #{$desktop-max};
+  --desktop-lg-max: #{$desktop-lg-max};
+
+  // ====---------------====
+  // Transitions
+  // ====---------------====
+  --timing--1: 0.1s;
+  --timing-0: 0.2s;
+  --timing-1: 0.4s;
+  --timing-2: 0.6s;
+  --timing-3: 0.8s;
+
+  --transition-base: var(--trans-type, all) var(--trans-timing, var(--timing-0))
+    var(--trans-mode, ease-in-out);
 }
