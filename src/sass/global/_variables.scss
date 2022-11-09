@@ -34,6 +34,12 @@
   --clr-background: var(--clr-background-h) var(--clr-background-s)
     var(--clr-background-l);
 
+  --clr-background-alt-h: 32;
+  --clr-background-alt-s: 17%;
+  --clr-background-alt-l: 80%;
+  --clr-background-alt: var(--clr-background-alt-h) var(--clr-background-alt-s)
+    var(--clr-background-alt-l);
+
   --clr-text-h: 0;
   --clr-text-s: 17%;
   --clr-text-l: 20%;

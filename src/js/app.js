@@ -97,12 +97,12 @@ if (burgerWrapper) {
     const controlLink = control.querySelector(":scope > a")
 
     // ===------ Mouse enter ------===
-    controlLink.addEventListener("mouseenter", () => {
+    control.addEventListener("mouseenter", () => {
       openBurgerSubmenu(controlLink)
     })
 
     // ===------ Mouse leave ------===
-    controlLink.addEventListener("mouseleave", () => {
+    control.addEventListener("mouseleave", () => {
       closeBurgerSubmenu(controlLink)
     })
 
