@@ -1,130 +1,132 @@
-@use "./mixins" as *;
-
 // ---------------------------------------------
 // ======---------------------------------======
 //  Variables
 // ======---------------------------------======
 // ---------------------------------------------
 
-:root {
-  // ====---------------====
-  // Colors
-  // ====---------------====
-  --clr-primary-h: 243;
-  --clr-primary-s: 45%;
-  --clr-primary-l: 39%;
-  --clr-primary: var(--clr-primary-h), var(--clr-primary-s),
-    var(--clr-primary-l);
+@use "./mixins" as *;
 
-  --clr-secondary-h: 173;
-  --clr-secondary-s: 35%;
-  --clr-secondary-l: 30%;
-  --clr-secondary: var(--clr-secondary-h) var(--clr-secondary-s)
-    var(--clr-secondary-l);
+@layer global {
+	:root {
+		// ====---------------====
+		// Colors
+		// ====---------------====
+		--clr-primary-h: 243;
+		--clr-primary-s: 45%;
+		--clr-primary-l: 39%;
+		--clr-primary: var(--clr-primary-h), var(--clr-primary-s),
+			var(--clr-primary-l);
 
-  --clr-tertiary-h: 0;
-  --clr-tertiary-s: 17%;
-  --clr-tertiary-l: 35%;
-  --clr-tertiary: var(--clr-tertiary-h) var(--clr-tertiary-s)
-    var(--clr-tertiary-l);
+		--clr-secondary-h: 173;
+		--clr-secondary-s: 35%;
+		--clr-secondary-l: 30%;
+		--clr-secondary: var(--clr-secondary-h) var(--clr-secondary-s)
+			var(--clr-secondary-l);
 
-  --clr-background-h: 32;
-  --clr-background-s: 17%;
-  --clr-background-l: 90%;
-  --clr-background: var(--clr-background-h) var(--clr-background-s)
-    var(--clr-background-l);
+		--clr-tertiary-h: 0;
+		--clr-tertiary-s: 17%;
+		--clr-tertiary-l: 35%;
+		--clr-tertiary: var(--clr-tertiary-h) var(--clr-tertiary-s)
+			var(--clr-tertiary-l);
 
-  --clr-background-alt-h: 32;
-  --clr-background-alt-s: 17%;
-  --clr-background-alt-l: 80%;
-  --clr-background-alt: var(--clr-background-alt-h) var(--clr-background-alt-s)
-    var(--clr-background-alt-l);
+		--clr-background-h: 32;
+		--clr-background-s: 17%;
+		--clr-background-l: 90%;
+		--clr-background: var(--clr-background-h) var(--clr-background-s)
+			var(--clr-background-l);
 
-  --clr-text-h: 0;
-  --clr-text-s: 17%;
-  --clr-text-l: 20%;
-  --clr-text: var(--clr-text-h) var(--clr-text-s) var(--clr-text-l);
+		--clr-background-alt-h: 32;
+		--clr-background-alt-s: 17%;
+		--clr-background-alt-l: 80%;
+		--clr-background-alt: var(--clr-background-alt-h)
+			var(--clr-background-alt-s) var(--clr-background-alt-l);
 
-  --clr-link-h: 243;
-  --clr-link-s: 61%;
-  --clr-link-l: 45%;
-  --clr-link: var(--clr-link-h) var(--clr-link-s) var(--clr-link-l);
+		--clr-text-h: 0;
+		--clr-text-s: 17%;
+		--clr-text-l: 20%;
+		--clr-text: var(--clr-text-h) var(--clr-text-s) var(--clr-text-l);
 
-  --clr-link-hover: var(--clr-secondary);
+		--clr-link-h: 243;
+		--clr-link-s: 61%;
+		--clr-link-l: 45%;
+		--clr-link: var(--clr-link-h) var(--clr-link-s) var(--clr-link-l);
 
-  // ====---------------====
-  // Font familys
-  // ====---------------====
-  --ff-main: "Rubik", "Noto Emoji", sans-serif;
-  --ff-alt: "Rubik", "Noto Emoji", sans-serif;
+		--clr-link-hover: var(--clr-secondary);
 
-  // ====---------------====
-  // Fluid Type
-  // --- --- --- --- --- ---
-  // Generated using the utopia type calculator
-  //  to update or change use the link below
-  // @link https://utopia.fyi/type/calculator?c=375,18,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
-  // ====---------------====
+		// ====---------------====
+		// Font familys
+		// ====---------------====
+		--ff-main: "Rubik", "Noto Emoji", sans-serif;
+		--ff-alt: "Rubik", "Noto Emoji", sans-serif;
 
-  --step--2: clamp(0.78rem, 0.69rem + 0.37vw, 0.96rem);
-  --step--1: clamp(0.94rem, 0.81rem + 0.55vw, 1.2rem);
-  --step-0: clamp(1.13rem, 0.94rem + 0.78vw, 1.5rem);
-  --step-1: clamp(1.35rem, 1.09rem + 1.1vw, 1.88rem);
-  --step-2: clamp(1.62rem, 1.27rem + 1.51vw, 2.34rem);
-  --step-3: clamp(1.94rem, 1.46rem + 2.06vw, 2.93rem);
-  --step-4: clamp(2.33rem, 1.68rem + 2.78vw, 3.66rem);
-  --step-5: clamp(2.8rem, 1.93rem + 3.72vw, 4.58rem);
+		// ====---------------====
+		// Fluid Type
+		// --- --- --- --- --- ---
+		// Generated using the utopia type calculator
+		//  to update or change use the link below
+		// @link https://utopia.fyi/type/calculator?c=375,18,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
+		// ====---------------====
 
-  // ====---------------====
-  // Fluid sizing
-  // --- --- --- --- --- ---
-  // Generated using the utopia spacing calculator
-  // to update or change use the link below
-  // @link https://utopia.fyi/space/calculator?c=375,21,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
-  // ====---------------====
+		--step--2: clamp(0.78rem, 0.69rem + 0.37vw, 0.96rem);
+		--step--1: clamp(0.94rem, 0.81rem + 0.55vw, 1.2rem);
+		--step-0: clamp(1.13rem, 0.94rem + 0.78vw, 1.5rem);
+		--step-1: clamp(1.35rem, 1.09rem + 1.1vw, 1.88rem);
+		--step-2: clamp(1.62rem, 1.27rem + 1.51vw, 2.34rem);
+		--step-3: clamp(1.94rem, 1.46rem + 2.06vw, 2.93rem);
+		--step-4: clamp(2.33rem, 1.68rem + 2.78vw, 3.66rem);
+		--step-5: clamp(2.8rem, 1.93rem + 3.72vw, 4.58rem);
 
-  --space-3xs: clamp(0.31rem, 0.28rem + 0.13vw, 0.38rem);
-  --space-2xs: clamp(0.69rem, 0.66rem + 0.13vw, 0.75rem);
-  --space-xs: clamp(1rem, 0.94rem + 0.26vw, 1.13rem);
-  --space-s: clamp(1.31rem, 1.22rem + 0.39vw, 1.5rem);
-  --space-m: clamp(2rem, 1.88rem + 0.52vw, 2.25rem);
-  --space-l: clamp(2.63rem, 2.44rem + 0.78vw, 3rem);
-  --space-xl: clamp(3.94rem, 3.66rem + 1.18vw, 4.5rem);
-  --space-2xl: clamp(5.25rem, 4.88rem + 1.57vw, 6rem);
-  --space-3xl: clamp(7.88rem, 7.32rem + 2.35vw, 9rem);
+		// ====---------------====
+		// Fluid sizing
+		// --- --- --- --- --- ---
+		// Generated using the utopia spacing calculator
+		// to update or change use the link below
+		// @link https://utopia.fyi/space/calculator?c=375,21,1.2,1140,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
+		// ====---------------====
 
-  // ====---------------====
-  // Widths / Wrappers
-  // ====---------------====
-  --page-max-width: 90rem;
-  --wrapper-fluid: max(
-    var(--space-l),
-    100% - (var(--page-max-width) - ((var(--space-l) * 2) / 2))
-  );
+		--space-3xs: clamp(0.31rem, 0.28rem + 0.13vw, 0.38rem);
+		--space-2xs: clamp(0.69rem, 0.66rem + 0.13vw, 0.75rem);
+		--space-xs: clamp(1rem, 0.94rem + 0.26vw, 1.13rem);
+		--space-s: clamp(1.31rem, 1.22rem + 0.39vw, 1.5rem);
+		--space-m: clamp(2rem, 1.88rem + 0.52vw, 2.25rem);
+		--space-l: clamp(2.63rem, 2.44rem + 0.78vw, 3rem);
+		--space-xl: clamp(3.94rem, 3.66rem + 1.18vw, 4.5rem);
+		--space-2xl: clamp(5.25rem, 4.88rem + 1.57vw, 6rem);
+		--space-3xl: clamp(7.88rem, 7.32rem + 2.35vw, 9rem);
 
-  // ===------ Min width vars ------===
-  --mobile-lg-min: #{$mobile-lg-min};
-  --tablet-min: #{$tablet-min};
-  --desktop-min: #{$desktop-min};
-  --desktop-lg-min: #{$desktop-lg-min};
-  --desktop-xl-min: #{$desktop-xl-min};
+		// ====---------------====
+		// Widths / Wrappers
+		// ====---------------====
+		--page-max-width: 90rem;
+		--wrapper-fluid: max(
+			var(--space-l),
+			100% - (var(--page-max-width) - ((var(--space-l) * 2) / 2))
+		);
 
-  // ===------ Max width vars ------===
-  --mobile-sm-max: #{$mobile-sm-max};
-  --mobile-lg-max: #{$mobile-lg-max};
-  --tablet-max: #{$tablet-max};
-  --desktop-max: #{$desktop-max};
-  --desktop-lg-max: #{$desktop-lg-max};
+		// ===------ Min width vars ------===
+		--mobile-lg-min: #{$mobile-lg-min};
+		--tablet-min: #{$tablet-min};
+		--desktop-min: #{$desktop-min};
+		--desktop-lg-min: #{$desktop-lg-min};
+		--desktop-xl-min: #{$desktop-xl-min};
 
-  // ====---------------====
-  // Transitions
-  // ====---------------====
-  --timing--1: 0.1s;
-  --timing-0: 0.2s;
-  --timing-1: 0.4s;
-  --timing-2: 0.6s;
-  --timing-3: 0.8s;
+		// ===------ Max width vars ------===
+		--mobile-sm-max: #{$mobile-sm-max};
+		--mobile-lg-max: #{$mobile-lg-max};
+		--tablet-max: #{$tablet-max};
+		--desktop-max: #{$desktop-max};
+		--desktop-lg-max: #{$desktop-lg-max};
 
-  --transition-base: var(--trans-type, all) var(--trans-timing, var(--timing-0))
-    var(--trans-mode, ease-in-out);
+		// ====---------------====
+		// Transitions
+		// ====---------------====
+		--timing--1: 0.1s;
+		--timing-0: 0.2s;
+		--timing-1: 0.4s;
+		--timing-2: 0.6s;
+		--timing-3: 0.8s;
+
+		--transition-base: var(--trans-type, all)
+			var(--trans-timing, var(--timing-0)) var(--trans-mode, ease-in-out);
+	}
 }

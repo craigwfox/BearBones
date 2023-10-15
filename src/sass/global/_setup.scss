@@ -1,13 +1,7 @@
 // ---------------------------------------------
 // ======---------------------------------======
-//  Blocks - Footer
+//  Define layer orders
 // ======---------------------------------======
 // ---------------------------------------------
 
-@layer blocks {
-	#page-footer {
-		border-block-start: 0.5rem solid hsl(var(--clr-secondary));
-	}
-
-	// end layer
-}
+@layer vendor, global, composition, blocks, utilities;

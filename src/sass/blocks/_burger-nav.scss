@@ -1,195 +1,199 @@
-@use "../global/mixins" as *;
-
 // ---------------------------------------------
 // ======---------------------------------======
 //  Burger nav
 // ======---------------------------------======
 // ---------------------------------------------
 
-// ====---------------====
-// Burger nav
-// ====---------------====
-.burger-menu {
-  padding-inline-start: 0;
+@use "../global/mixins" as *;
 
-  list-style: none;
+@layer blocks {
+	// ====---------------====
+	// Burger nav
+	// ====---------------====
+	.burger-menu {
+		padding-inline-start: 0;
 
-  // Mobile menu
-  @include tablet-max {
-    display: none;
-  }
+		list-style: none;
 
-  // Tablet+ menu
-  @include tablet-min {
-    display: flex;
+		// Mobile menu
+		@include tablet-max {
+			display: none;
+		}
 
-    > li {
-      position: relative;
+		// Tablet+ menu
+		@include tablet-min {
+			display: flex;
 
-      > a {
-        display: flex;
+			> li {
+				position: relative;
 
-        padding: var(--space-2xs) var(--space-s);
-      }
-    }
+				> a {
+					display: flex;
 
-    .mega,
-    .dropdown {
-      display: none;
+					padding: var(--space-2xs) var(--space-s);
+				}
+			}
 
-      padding-block: var(--space-xs) var(--space-s);
+			.mega,
+			.dropdown {
+				display: none;
 
-      background: hsl(var(--clr-background-alt));
-      box-shadow: 0 2px 5px hsl(0 0% 0% / 0.3);
+				padding-block: var(--space-xs) var(--space-s);
 
-      font-size: var(--step--1);
-    }
+				background: hsl(var(--clr-background-alt));
+				box-shadow: 0 2px 5px hsl(0 0% 0% / 0.3);
 
-    // ===------ Dropdown ------===
-    .dropdown {
-      min-width: clamp(9.375rem, 7.174rem + 9.39vw, 15.625rem);
+				font-size: var(--step--1);
+			}
 
-      gap: var(--space-2xs);
+			// ===------ Dropdown ------===
+			.dropdown {
+				min-width: clamp(9.375rem, 7.174rem + 9.39vw, 15.625rem);
 
-      padding-inline: var(--space-s);
+				gap: var(--space-2xs);
 
-      position: absolute;
-      top: 100%;
-      right: 0;
+				padding-inline: var(--space-s);
 
-      list-style: none;
-    }
+				position: absolute;
+				top: 100%;
+				right: 0;
 
-    a[aria-expanded="true"] + .dropdown {
-      display: grid;
-    }
+				list-style: none;
+			}
 
-    // ===------ Mega ------===
-    .mega {
-      display: none;
-      align-items: center;
-      gap: var(--space-l);
-      grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+			a[aria-expanded="true"] + .dropdown {
+				display: grid;
+			}
 
-      position: fixed;
-      left: 0;
-      right: 0;
+			// ===------ Mega ------===
+			.mega {
+				display: none;
+				align-items: center;
+				gap: var(--space-l);
+				grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
 
-      padding-inline: var(--wrapper-fluid);
+				position: fixed;
+				left: 0;
+				right: 0;
 
-      ul {
-        display: grid;
-        gap: var(--space-2xs);
+				padding-inline: var(--wrapper-fluid);
 
-        padding: 0;
+				ul {
+					display: grid;
+					gap: var(--space-2xs);
 
-        list-style: none;
-      }
-    }
+					padding: 0;
 
-    a[aria-expanded="true"] + .mega {
-      display: grid;
-    }
-  }
-}
+					list-style: none;
+				}
+			}
 
-body:has([data-menu-status="open"]) {
-  @include tablet-max {
-    overflow: hidden;
-  }
-}
+			a[aria-expanded="true"] + .mega {
+				display: grid;
+			}
+		}
+	}
 
-[data-menu-status="open"] {
-  .burger-menu {
-    @include tablet-max {
-      display: block;
+	body:has([data-menu-status="open"]) {
+		@include tablet-max {
+			overflow: hidden;
+		}
+	}
 
-      overflow-y: auto;
+	[data-menu-status="open"] {
+		.burger-menu {
+			@include tablet-max {
+				display: block;
 
-      padding: var(--space-s) var(--space-l);
+				overflow-y: auto;
 
-      position: fixed;
-      inset: var(--header-height, 10rem) 0 0;
+				padding: var(--space-s) var(--space-l);
 
-      background-color: hsl(var(--clr-background) / 0.9);
-    }
-  }
-}
+				position: fixed;
+				inset: var(--header-height, 10rem) 0 0;
 
-// ====---------------====
-// Burger button styles
-// ====---------------====
-.burger-btn {
-  width: 3rem;
+				background-color: hsl(var(--clr-background) / 0.9);
+			}
+		}
+	}
 
-  display: block;
+	// ====---------------====
+	// Burger button styles
+	// ====---------------====
+	.burger-btn {
+		width: 3rem;
 
-  padding: 0;
+		display: block;
 
-  border: 0;
-  background-color: transparent;
+		padding: 0;
 
-  cursor: pointer;
+		border: 0;
+		background-color: transparent;
 
-  color: hsl(var(--clr-link));
+		cursor: pointer;
 
-  @include tablet-min {
-    display: none;
-  }
+		color: hsl(var(--clr-link));
 
-  > span {
-    --height: 0.4em;
+		@include tablet-min {
+			display: none;
+		}
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, var(--height));
-    gap: var(--height);
+		> span {
+			--height: 0.4em;
 
-    > span {
-      width: 100%;
-      height: var(--height);
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, var(--height));
+			gap: var(--height);
 
-      grid-column: 1;
+			> span {
+				width: 100%;
+				height: var(--height);
 
-      border-radius: var(--height);
-      background: currentColor;
+				grid-column: 1;
 
-      &:nth-child(1) {
-        grid-row: 1;
-      }
+				border-radius: var(--height);
+				background: currentColor;
 
-      &:nth-child(2) {
-        grid-row: 2;
-      }
+				&:nth-child(1) {
+					grid-row: 1;
+				}
 
-      &:nth-child(3) {
-        grid-row: 3;
-      }
-    }
-  }
+				&:nth-child(2) {
+					grid-row: 2;
+				}
 
-  &:hover,
-  &:focus {
-    color: hsl(var(--clr-link-hover));
-  }
-}
+				&:nth-child(3) {
+					grid-row: 3;
+				}
+			}
+		}
 
-[data-menu-status="open"] {
-  .burger-btn {
-    > span {
-      span:nth-child(1) {
-        grid-row: 2;
-        transform: rotate(45deg);
-      }
+		&:hover,
+		&:focus {
+			color: hsl(var(--clr-link-hover));
+		}
+	}
 
-      span:nth-child(2) {
-        opacity: 0;
-      }
+	[data-menu-status="open"] {
+		.burger-btn {
+			> span {
+				span:nth-child(1) {
+					grid-row: 2;
+					transform: rotate(45deg);
+				}
 
-      span:nth-child(3) {
-        grid-row: 2;
-        transform: rotate(-45deg);
-      }
-    }
-  }
+				span:nth-child(2) {
+					opacity: 0;
+				}
+
+				span:nth-child(3) {
+					grid-row: 2;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	// end layer
 }

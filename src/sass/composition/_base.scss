@@ -4,12 +4,16 @@
 // ======---------------------------------======
 // ---------------------------------------------
 
-.flow {
-  > * + * {
-    margin-block-start: var(--space-s);
-  }
+@layer composition {
+	.flow {
+		> * + * {
+			margin-block-start: var(--space-s);
+		}
 
-  :where(h1, h2, h3, h4, h5, h6) + p {
-    margin-block-start: var(--space-3xs);
-  }
+		:where(h1, h2, h3, h4, h5, h6) + p {
+			margin-block-start: var(--space-3xs);
+		}
+	}
+
+	// end layer
 }

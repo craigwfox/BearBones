@@ -1,26 +1,30 @@
-@use "../global/mixins" as *;
-
 // ---------------------------------------------
 // ======---------------------------------======
 //  Page Header
 // ======---------------------------------======
 // ---------------------------------------------
 
-// ====---------------====
-// Base
-// ====---------------====
-#page-header {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: var(--step--1) var(--step-0);
-  align-items: center;
-  justify-content: space-between;
+@use "../global/mixins" as *;
 
-  border-block-end: 0.5rem solid hsl(var(--clr-secondary));
+@layer blocks {
+	// ====---------------====
+	// Base
+	// ====---------------====
+	#page-header {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		gap: var(--step--1) var(--step-0);
+		align-items: center;
+		justify-content: space-between;
 
-  > a {
-    font-size: var(--step-2);
-    font-weight: 700;
-    text-decoration: none;
-  }
+		border-block-end: 0.5rem solid hsl(var(--clr-secondary));
+
+		> a {
+			font-size: var(--step-2);
+			font-weight: 700;
+			text-decoration: none;
+		}
+	}
+
+	// end layer
 }
