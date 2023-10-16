@@ -11,46 +11,13 @@
 		// ====---------------====
 		// Colors
 		// ====---------------====
-		--clr-primary-h: 243;
-		--clr-primary-s: 45%;
-		--clr-primary-l: 39%;
-		--clr-primary: var(--clr-primary-h), var(--clr-primary-s),
-			var(--clr-primary-l);
-
-		--clr-secondary-h: 173;
-		--clr-secondary-s: 35%;
-		--clr-secondary-l: 30%;
-		--clr-secondary: var(--clr-secondary-h) var(--clr-secondary-s)
-			var(--clr-secondary-l);
-
-		--clr-tertiary-h: 0;
-		--clr-tertiary-s: 17%;
-		--clr-tertiary-l: 35%;
-		--clr-tertiary: var(--clr-tertiary-h) var(--clr-tertiary-s)
-			var(--clr-tertiary-l);
-
-		--clr-background-h: 32;
-		--clr-background-s: 17%;
-		--clr-background-l: 90%;
-		--clr-background: var(--clr-background-h) var(--clr-background-s)
-			var(--clr-background-l);
-
-		--clr-background-alt-h: 32;
-		--clr-background-alt-s: 17%;
-		--clr-background-alt-l: 80%;
-		--clr-background-alt: var(--clr-background-alt-h)
-			var(--clr-background-alt-s) var(--clr-background-alt-l);
-
-		--clr-text-h: 0;
-		--clr-text-s: 17%;
-		--clr-text-l: 20%;
-		--clr-text: var(--clr-text-h) var(--clr-text-s) var(--clr-text-l);
-
-		--clr-link-h: 243;
-		--clr-link-s: 61%;
-		--clr-link-l: 45%;
-		--clr-link: var(--clr-link-h) var(--clr-link-s) var(--clr-link-l);
-
+		--clr-primary: hsl(243 45% 39%);
+		--clr-secondary: hsl(173 35% 30%);
+		--clr-tertiary: hsl(0 17% 35%);
+		--clr-background: hsl(32 17% 90%);
+		--clr-background-alt: hsl(32 17% 80%);
+		--clr-text: hsl(0 17% 20%);
+		--clr-link: hsl(243 61% 45%);
 		--clr-link-hover: var(--clr-secondary);
 
 		// ====---------------====

@@ -6,7 +6,7 @@
 
 @layer blocks {
 	#page-footer {
-		border-block-start: 0.5rem solid hsl(var(--clr-secondary));
+		border-block-start: 0.5rem solid var(--clr-secondary);
 	}
 
 	// end layer

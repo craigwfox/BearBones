@@ -40,7 +40,7 @@
 
 				padding-block: var(--space-xs) var(--space-s);
 
-				background: hsl(var(--clr-background-alt));
+				background: var(--clr-background-alt);
 				box-shadow: 0 2px 5px hsl(0 0% 0% / 0.3);
 
 				font-size: var(--step--1);
@@ -112,7 +112,7 @@
 				position: fixed;
 				inset: var(--header-height, 10rem) 0 0;
 
-				background-color: hsl(var(--clr-background) / 0.9);
+				background-color: var(--clr-background);
 			}
 		}
 	}
@@ -132,7 +132,7 @@
 
 		cursor: pointer;
 
-		color: hsl(var(--clr-link));
+		color: var(--clr-link);
 
 		@include tablet-min {
 			display: none;
@@ -171,7 +171,7 @@
 
 		&:hover,
 		&:focus {
-			color: hsl(var(--clr-link-hover));
+			color: var(--clr-link-hover);
 		}
 	}
 

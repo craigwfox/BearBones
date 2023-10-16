@@ -11,15 +11,11 @@
 	// Headings
 	// ====---------------====
 	:where(h1, h2, h3) {
-		color: hsl(var(--clr-tertiary));
+		color: var(--clr-tertiary);
 	}
 
 	:where(h4, h5, h6) {
-		color: hsl(
-			var(--clr-tertiary-h),
-			var(--clr-tertiary-s),
-			calc(var(--clr-tertiary-l) - 10%)
-		);
+		color: var(--clr-tertiary);
 	}
 
 	h1 {
@@ -50,14 +46,14 @@
 	// Links
 	// ====---------------====
 	a {
-		color: hsl(var(--clr-link));
+		color: var(--clr-link);
 
 		text-underline-offset: 0.2em;
 		text-decoration-thickness: 0.1em;
 
 		&:hover,
 		&:focus {
-			color: hsl(var(--clr-link-hover));
+			color: var(--clr-link-hover);
 		}
 	}
 
@@ -71,11 +67,11 @@
 		margin: -1px;
 		padding: 1rem 2rem;
 
-		background-color: hsl(var(--clr-background));
-		border: 0.3rem solid hsl(var(--clr-link));
+		background-color: var(--clr-background);
+		border: 0.3rem solid var(--clr-link);
 		clip: rect(0 0 0 0);
 
-		color: hsl(var(--clr-text));
+		color: var(--clr-text);
 		white-space: nowrap;
 		text-decoration: none;
 
@@ -97,8 +93,8 @@
 		}
 
 		&:focus:hover {
-			background: hsl(var(--clr-background));
-			border-color: hsl(var(--clr-link-hover));
+			background: var(--clr-background);
+			border-color: var(--clr-link-hover);
 		}
 	}
 

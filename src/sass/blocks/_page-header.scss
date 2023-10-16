@@ -17,7 +17,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		border-block-end: 0.5rem solid hsl(var(--clr-secondary));
+		border-block-end: 0.5rem solid var(--clr-secondary);
 
 		> a {
 			font-size: var(--step-2);
