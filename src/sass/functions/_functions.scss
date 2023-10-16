@@ -58,15 +58,26 @@ $browser-context: 16; // Default
 // ====---------------====
 // Fluid numbers
 // ====---------------====
-@function flClamp($min-value, $max-value, $min-vw: 20rem, $max-vw: 103rem) {
+@function flClamp(
+	$min-value-in,
+	$max-value-in,
+	$min-vw-in: 375,
+	$max-vw-in: 1440
+) {
+	$min-value: math.div($min-value-in, $browser-context);
+	$max-value: math.div($max-value-in, $browser-context);
+	$min-vw: math.div($min-vw-in, $browser-context);
+	$max-vw: math.div($max-vw-in, $browser-context);
+
 	$factor: math.div(1, ($max-vw - $min-vw)) * ($max-value - $min-value);
+
 	$calc-value: unquote(
-		"#{ to-fixed($min-value - ($min-vw * $factor)) } + #{ to-fixed(100vw * $factor) }"
+		"#{ to-fixed($min-value - ($min-vw * $factor)) }rem + #{ to-fixed(100vw * $factor) }"
 	);
 
 	@return clamp(
-		#{if($min-value > $max-value, $max-value, $min-value)},
+		#{if($min-value > $max-value, $max-value, $min-value)}rem,
 		#{$calc-value},
-		#{if($min-value > $max-value, $min-value, $max-value)}
+		#{if($min-value > $max-value, $min-value, $max-value)}rem
 	);
 }
