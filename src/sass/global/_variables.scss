@@ -66,8 +66,8 @@
 		// ====---------------====
 		--page-max-width: 90rem;
 		--wrapper-fluid: max(
-			var(--space-l),
-			100% - (var(--page-max-width) - ((var(--space-l) * 2) / 2))
+			var(--space-s),
+			(100% - (var(--page-max-width) - (var(--space-s) * 2))) / 2
 		);
 
 		// ===------ Min width vars ------===
