@@ -11,11 +11,11 @@
 	// Headings
 	// ====---------------====
 	:where(h1, h2, h3) {
-		color: var(--clr-tertiary);
+		color: var(--clr-primary);
 	}
 
 	:where(h4, h5, h6) {
-		color: var(--clr-tertiary);
+		color: var(--clr-secondary);
 	}
 
 	h1 {

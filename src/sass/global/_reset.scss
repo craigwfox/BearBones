@@ -3,7 +3,6 @@
 //  Reset
 // ======---------------------------------======
 // ---------------------------------------------
-
 @layer global {
 	// ====---------------====
 	// Use a more-intuitive box-sizing model.
@@ -82,6 +81,10 @@
 	}
 
 	/* Remove some list styles when they have a class */
+	ul {
+		padding-inline-start: 1.3rem;
+	}
+
 	ul[class],
 	ol[class] {
 		margin: 0;
@@ -115,6 +118,4 @@
 	select {
 		font: inherit;
 	}
-
-	// end layer
 }

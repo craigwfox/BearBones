@@ -11,14 +11,20 @@
 		// ====---------------====
 		// Colors
 		// ====---------------====
-		--clr-primary: hsl(243 45% 39%);
-		--clr-secondary: hsl(173 35% 30%);
-		--clr-tertiary: hsl(0 17% 35%);
-		--clr-background: hsl(32 17% 90%);
-		--clr-background-alt: hsl(32 17% 80%);
-		--clr-text: hsl(0 17% 20%);
-		--clr-link: hsl(243 61% 45%);
-		--clr-link-hover: var(--clr-secondary);
+		--clr-primary: oklch(0.597 0.244 10.59);
+		--clr-secondary: oklch(0.568 0.211 253.06);
+		--clr-tertiary: oklch(0.59 0.185 20);
+
+		--clr-background: oklch(1 0.01 251);
+		--clr-background-alt: oklch(0.69 0.09 253.06);
+
+		--clr-text: black;
+		--clr-link: var(--clr-secondary);
+		--clr-link-hover: color-mix(
+			in oklab,
+			var(--clr-secondary),
+			black 40%
+		);
 
 		// ====---------------====
 		// Font familys
