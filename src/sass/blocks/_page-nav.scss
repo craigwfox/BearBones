@@ -1,6 +1,6 @@
 // ---------------------------------------------
 // ======---------------------------------======
-//  Burger nav
+//  Page nav
 // ======---------------------------------======
 // ---------------------------------------------
 
@@ -8,9 +8,9 @@
 
 @layer blocks {
 	// ====---------------====
-	// Burger nav
+	// Page nav
 	// ====---------------====
-	.burger-menu {
+	.page-nav {
 		padding-inline-start: 0;
 
 		list-style: none;
@@ -101,7 +101,7 @@
 	}
 
 	[data-menu-status="open"] {
-		.burger-menu {
+		.page-nav {
 			@include tablet-max {
 				display: block;
 
@@ -118,9 +118,9 @@
 	}
 
 	// ====---------------====
-	// Burger button styles
+	// Page button styles
 	// ====---------------====
-	.burger-btn {
+	.page-nav-btn {
 		width: 3rem;
 
 		display: block;
@@ -176,7 +176,7 @@
 	}
 
 	[data-menu-status="open"] {
-		.burger-btn {
+		.page-btn {
 			> span {
 				span:nth-child(1) {
 					grid-row: 2;
